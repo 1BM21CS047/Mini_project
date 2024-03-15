@@ -1,5 +1,6 @@
 //ignore_for_file: camel_case_types, avoid_print
 
+import 'package:add_expense/widgets/Profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -170,7 +171,12 @@ class _LoginState extends State<login> {
         borderRadius: BorderRadius.circular(20 * fem),
       ),
       child: TextButton(
-        onPressed: login,
+        onPressed: () {
+          Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const profilePageScreen()),
+  );
+        },
         style: TextButton.styleFrom(
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(

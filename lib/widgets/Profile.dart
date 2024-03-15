@@ -1,3 +1,4 @@
+import 'package:add_expense/page-1/homepage-1.dart';
 import 'package:add_expense/widgets/dashboard.dart';
 import 'package:add_expense/widgets/my_app.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +67,10 @@ class _profilePageScreenState extends State<profilePageScreen> {
             GestureDetector(
               onTap: () {
                 //logout logic
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const homepage()),
+                );
               },
               child: Container(
                 child: Image.asset('images/logout_btn.png'),

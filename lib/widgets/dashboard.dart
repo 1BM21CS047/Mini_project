@@ -1,3 +1,4 @@
+import 'package:add_expense/page-1/homepage-1.dart';
 import 'package:add_expense/widgets/my_app.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,12 @@ class Expense {
   Expense(this.category, this.amount);
 }
 
-class ExpenseCategoryPage extends StatelessWidget {
+class ExpenseCategoryPage extends StatefulWidget {
+  @override
+  State<ExpenseCategoryPage> createState() => _ExpenseCategoryPageState();
+}
+
+class _ExpenseCategoryPageState extends State<ExpenseCategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +88,10 @@ class ExpenseCategoryPage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 //logout logic
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const homepage()),
+                );
               },
               child: Container(
                 child: Image.asset('images/logout_btn.png'),

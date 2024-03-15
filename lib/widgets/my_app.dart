@@ -1,3 +1,4 @@
+import 'package:add_expense/page-1/homepage-1.dart';
 import 'package:add_expense/widgets/Profile.dart';
 import 'package:add_expense/widgets/dashboard.dart';
 import 'package:flutter/material.dart';
@@ -108,13 +109,17 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      //logout logic
-                    },
-                    child: Container(
-                      child: Image.asset('images/logout_btn.png'),
-                    ),
-                  ),
+              onTap: () {
+                //logout logic
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const homepage()),
+                );
+              },
+              child: Container(
+                child: Image.asset('images/logout_btn.png'),
+              ),
+            ),
                 ],
               ),
             ),
